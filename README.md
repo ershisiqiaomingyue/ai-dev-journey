@@ -9,7 +9,7 @@
 | [Phase 3](./phase3/)  | 框架与复杂任务 | `auto_fix_agent.py` —— 运行测试 → 读日志 → 自动修复 |
 | [Phase 4](./phase4/)  | 成本优化 & 副业项目 | Telegram Bot + 知识库 RAG + 作品集 |
 
-> 📋 详细周计划 + 任务清单：[`tasks/AI Agent 转型全任务清单（2026.06 → 2027.02）.md`](./tasks/AI%20Agent%20转型全任务清单（2026.06%20→%202027.02）.md)
+> 📋 详细任务清单（按节奏推进，无固定日期）：[`tasks/AI Agent 转型全任务清单.md`](./tasks/AI%20Agent%20转型全任务清单.md)
 
 ## 快速上手
 
@@ -90,9 +90,9 @@ python phase1/01_hello_agent.py
 ## 进度跟踪
 
 每个 phase 的子目录里都有独立的 `README.md` 记录：
-- 当前周的任务完成度
+- 当前任务完成度
 - 踩过的坑和解决思路
-- 下一周的计划
+- 下一个任务的计划
 
 ## License
 
