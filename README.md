@@ -9,6 +9,8 @@
 | [Phase 3](./phase3/)  | 框架与复杂任务 | `auto_fix_agent.py` —— 运行测试 → 读日志 → 自动修复 |
 | [Phase 4](./phase4/)  | 成本优化 & 副业项目 | Telegram Bot + 知识库 RAG + 作品集 |
 
+> 📋 详细周计划 + 任务清单：[`tasks/AI Agent 转型全任务清单（2026.06 → 2027.02）.md`](./tasks/AI%20Agent%20转型全任务清单（2026.06%20→%202027.02）.md)
+
 ## 快速上手
 
 ```bash
@@ -71,6 +73,19 @@ python phase1/01_hello_agent.py
 - 用 Rust 重写 Agent 核心循环（性能极客路线）
 - Multi-Agent 框架（AutoGen / CrewAI）
 - 写一篇技术博客，把这个项目讲给别人听
+
+## 📚 参考项目（学习借鉴来源）
+
+不是从零造轮子，而是站在巨人肩膀上：
+
+| 项目 | 借鉴的核心思想 | 落地到 |
+|---|---|---|
+| [DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) | 工具调用自愈、Append-Only 缓存、Checkpoint、成本仪表盘 | Phase 1/2/3/4 |
+| [Claude Code](https://claude.com/product/claude-code) | Plan 模式 + 审批门、人工介入 interrupt/resume | Phase 3 |
+| [Codex CLI](https://github.com/openai/codex) | ripgrep 全文搜索 + 按需 RAG 的混合架构 | Phase 2 |
+| LangGraph / LangChain | 状态图、Plan-and-Execute、多 Agent 编排 | Phase 3 |
+
+**学完每个 phase 的对应借鉴点，你就理解了"为什么生产级 Agent 这么设计"**——不是凭空想象，是从真实项目里提炼的最佳实践。
 
 ## 进度跟踪
 

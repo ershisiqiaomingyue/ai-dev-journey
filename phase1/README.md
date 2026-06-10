@@ -11,6 +11,7 @@
 - [x] `03_function_call.py` — 通过 Function Calling 实现工具调用
 - [ ] `04_react_agent.py` — ReAct 循环：推理 → 行动 → 观察 → 重复
 - [ ] `05_file_assistant.py` — 综合项目：一个能读写文件的 Agent
+- [ ] `06_tool_call_repair.py` — **【借鉴 Reasonix】** 工具调用自愈：处理畸形 JSON、参数缺失、重复调用
 
 ## 运行方式
 
@@ -25,6 +26,65 @@ pip install openai python-dotenv
 python phase1/01_hello_agent.py
 python phase1/02_chat_loop.py
 ```
+
+## 工具调用自愈（06）— 借鉴自 DeepSeek-Reasonix
+
+> **为什么加这个任务**：在 phase 2-3 你用 DeepSeek 写 Agent 会发现一个痛点——**模型吐出来的 tool_call JSON 经常有问题**（缺括号、参数错位、重复调用风暴、响应截断）。如果每次都报错让用户重试，体验极差。
+>
+> Reasonix 的解决方案是**4 轮自动重试修复**。我们用最朴素的方式复刻这个机制。
+
+### 典型错误场景
+
+| 错误类型 | 表现 | 修复策略 |
+|---|---|---|
+| JSON 截断 | `{"path": "config.jso` | 补全右括号；或重新调用 |
+| 参数缺失 | `{"path": "config.json"}` 缺 `content` | 把错误信息回传 LLM，让它补 |
+| 参数类型错 | `path` 传了 `123`（应是字符串） | 强制类型转换；或重叫 |
+| 工具名拼错 | `read_fiel` | 模糊匹配到 `read_file` |
+| 重复调用风暴 | 同一工具 3 轮内被调 5 次 | 计数器，超过阈值就拒绝 |
+
+### 核心代码骨架
+
+```python
+def execute_tool_with_retry(tool_call, tool_functions, max_retries=4):
+    """Reasonix 风格的工具调用自愈"""
+    func_name = tool_call.function.name
+    raw_args = tool_call.function.arguments
+
+    for attempt in range(1, max_retries + 1):
+        # 1. 尝试修复 JSON
+        fixed_args = repair_json(raw_args)
+        if fixed_args is None:
+            return {"error": f"第{attempt}次：JSON 无法修复", "raw": raw_args}
+
+        # 2. 模糊匹配工具名
+        actual_name = fuzzy_match_tool(func_name, list(tool_functions.keys()))
+        if actual_name is None:
+            return {"error": f"第{attempt}次：未知工具 {func_name}"}
+
+        # 3. 尝试执行
+        try:
+            result = tool_functions[actual_name](**fixed_args)
+            return {"ok": True, "result": result, "attempts": attempt}
+        except TypeError as e:
+            # 参数错误：把错误信息回传，让 LLM 下次补
+            return {"error": f"参数错误：{e}", "should_retry": True}
+        except Exception as e:
+            return {"error": f"执行失败：{e}"}
+
+    return {"error": "达到最大重试次数"}
+```
+
+### 学习目标
+
+- [ ] 写一个 `repair_json()` 处理截断、缺引号、缺括号
+- [ ] 写一个 `fuzzy_match_tool()` 用编辑距离匹配工具名
+- [ ] 在 `04_react_agent.py` 里替换原 `tool_call` 处理逻辑
+- [ ] 测试场景：故意构造 5 种畸形 JSON，看修复成功率
+
+### 经验出处
+
+参考项目：[DeepSeek-Reasonix](https://github.com/esengine/DeepSeek-Reasonix) — 它的 4 轮内部修复流程是这个模式的工业级实现。本任务做"教学级"复刻，理解原理即可。
 
 ---
 
