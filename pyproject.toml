@@ -1,10 +1,10 @@
 [project]
 name = "ai-agent-lab"
 version = "0.1.0"
-description = "AI Agent learning project - from basics to production"
+description = "AI Agent 学习项目 - 从基础到生产环境"
 requires-python = ">=3.10"
 dependencies = [
-    "anthropic>=0.40",
+    "openai>=1.0",
     "python-dotenv>=1.0",
 ]
 
@@ -15,7 +15,7 @@ phase2 = [
 ]
 phase3 = [
     "langgraph",
-    "langchain-anthropic",
+    "langchain-openai",
     "langchain-core",
 ]
 phase4 = [
