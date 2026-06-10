@@ -34,9 +34,9 @@ from utils.AiClient import AiClient
 # ============================================================
 # 配置
 # ============================================================
-
-model = os.getenv("LLM_MODEL", "deepseek-v4-flash")
-client = AiClient().client
+aiClient = AiClient()
+client = aiClient.client
+model = aiClient.model
 
 # 保留最近多少轮对话（1轮 = 1条user + 1条assistant）
 # TODO: 试试改成 5 或 20，观察 AI 的"记忆"变化
@@ -51,7 +51,7 @@ HISTORY_DIR.mkdir(exist_ok=True)
 # 对话历史的保存和加载
 # ============================================================
 
-def save_history(messages: list, filename: str):
+def save_history(messages: list, filename: str = ''):
     """
     把对话历史保存到 JSON 文件
 

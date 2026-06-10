@@ -19,6 +19,9 @@ class AiClient:
         if not api_key or api_key == "your-api-key-here":
             print("[错误] LLM_API_KEY 未配置，请编辑 .env 文件")
             sys.exit(1)
+        self.model = os.getenv("LLM_MODEL",'qwen3.5-flash')
 
         self.client = OpenAI(api_key=api_key, base_url=base_url)
 
+    def get_model(self):
+        return self.model

@@ -16,19 +16,15 @@ from pathlib import Path
 from dotenv import load_dotenv
 from openai import OpenAI
 
+from utils.AiClient import AiClient
+
 # --- 加载配置 ---
 env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(env_path)
 
-api_key = os.getenv("LLM_API_KEY")
-base_url = os.getenv("LLM_BASE_URL")
-model = os.getenv("LLM_MODEL", "deepseek-v4-flash")
-
-if not api_key or api_key == "your-api-key-here":
-    print("[错误] LLM_API_KEY 未配置，请编辑 .env 文件")
-    sys.exit(1)
-
-client = OpenAI(api_key=api_key, base_url=base_url)
+aiClient = AiClient()
+client = aiClient.client
+model = aiClient.model
 
 
 # ============================================================
