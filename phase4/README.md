@@ -4,15 +4,13 @@
 
 让 Agent 低成本、稳定运行，并完成可展示的完整项目。
 
-## 脚本列表
+## 任务列表
 
-| 文件/目录 | 周次 | 学习要点 |
-|----------|------|---------|
-| `01_cost_optimizer.py` | W19-20 | Prompt 缓存、模型路由、成本追踪 |
-| `telegram_bot/` | W21-22 | 将 Agent 接入 Telegram Bot |
-| `knowledge_base/` | W23-24 | 个人知识库 RAG Agent（副业项目） |
-| `02_reliability.py` | W25-26 | 错误重试、步数限制、人工接管 |
-| `portfolio/` | W27-28 | 作品集整理与展示 |
+- [ ] `01_cost_optimizer.py` — Prompt 缓存、模型路由、成本追踪
+- [ ] `telegram_bot/` — 将 Agent 接入 Telegram Bot
+- [ ] `knowledge_base/` — 个人知识库 RAG Agent（副业项目）
+- [ ] `02_reliability.py` — 错误重试、步数限制、人工接管
+- [ ] `portfolio/` — 作品集整理与展示
 
 ## 运行方式
 

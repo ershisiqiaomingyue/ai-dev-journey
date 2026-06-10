@@ -4,15 +4,13 @@
 
 从零手写，理解 LLM API、Function Calling 和 ReAct 模式。
 
-## 脚本列表
+## 任务列表
 
-| 文件 | 周次 | 学习要点 |
-|------|------|---------|
-| `01_hello_agent.py` | W1 | 第一次 API 调用，理解 token 用量和 system prompt |
-| `02_chat_loop.py` | W2 | 多轮对话，理解上下文窗口 |
-| `03_function_call.py` | W2 | 通过 Function Calling 实现工具调用 |
-| `04_react_agent.py` | W3 | ReAct 循环：推理 → 行动 → 观察 → 重复 |
-| `05_file_assistant.py` | W4 | 综合项目：一个能读写文件的 Agent |
+- [x] `01_hello_agent.py` — 第一次 API 调用，理解 token 用量和 system prompt
+- [ ] `02_chat_loop.py` — 多轮对话，理解上下文窗口
+- [ ] `03_function_call.py` — 通过 Function Calling 实现工具调用
+- [ ] `04_react_agent.py` — ReAct 循环：推理 → 行动 → 观察 → 重复
+- [ ] `05_file_assistant.py` — 综合项目：一个能读写文件的 Agent
 
 ## 运行方式
 

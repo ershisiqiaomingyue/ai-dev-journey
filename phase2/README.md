@@ -4,14 +4,12 @@
 
 让 Agent 能读取代码项目，实现"基于知识的问答"（Retrieval-Augmented Generation）。
 
-## 脚本列表
+## 任务列表
 
-| 文件 | 周次 | 学习要点 |
-|------|------|---------|
-| `01_embed_and_store.py` | W5 | 文本切块、向量化、存入向量数据库 |
-| `02_retrieval_search.py` | W6 | 语义检索：给定问题，返回最相关的文本块 |
-| `03_rag_qa.py` | W6 | RAG 问答：检索结果 + LLM 生成回答 |
-| `04_code_qa_agent.py` | W7-8 | 综合项目：代码库问答 Agent |
+- [ ] `01_embed_and_store.py` — 文本切块、向量化、存入向量数据库
+- [ ] `02_retrieval_search.py` — 语义检索：给定问题，返回最相关的文本块
+- [ ] `03_rag_qa.py` — RAG 问答：检索结果 + LLM 生成回答
+- [ ] `04_code_qa_agent.py` — 综合项目：代码库问答 Agent
 
 ## 运行方式
 

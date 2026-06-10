@@ -4,15 +4,13 @@
 
 使用 LangGraph 构建能完成多步任务的 Agent，理解状态图、节点、边的概念。
 
-## 脚本列表
+## 任务列表
 
-| 文件 | 周次 | 学习要点 |
-|------|------|---------|
-| `01_simple_graph.py` | W11 | LangGraph 基础：StateGraph, Node, Edge |
-| `02_react_graph.py` | W11 | 用 LangGraph 重写 ReAct Agent |
-| `03_multi_step.py` | W12 | 多步任务编排：Plan-and-Execute 模式 |
-| `04_multi_agent.py` | W13 | 多 Agent 协作：主管 + 子 Agent |
-| `05_dev_assistant.py` | W14-16 | 综合项目：开发助手 Agent |
+- [ ] `01_simple_graph.py` — LangGraph 基础：StateGraph, Node, Edge
+- [ ] `02_react_graph.py` — 用 LangGraph 重写 ReAct Agent
+- [ ] `03_multi_step.py` — 多步任务编排：Plan-and-Execute 模式
+- [ ] `04_multi_agent.py` — 多 Agent 协作：主管 + 子 Agent
+- [ ] `05_dev_assistant.py` — 综合项目：开发助手 Agent
 
 ## 运行方式
 
