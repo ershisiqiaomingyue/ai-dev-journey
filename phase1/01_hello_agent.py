@@ -3,9 +3,8 @@
 # 功能：第一次 LLM API 调用 —— 发送消息，打印回复和 token 用量
 # 运行：python phase1/01_hello_agent.py
 # 前置条件：
-#   1. 复制 .env.example 为 .env
-#   2. 在 .env 中填入你的 LLM_API_KEY
-#   3. pip install openai python-dotenv
+#   1. 在 .env 中填入你的 LLM_API_KEY
+#   2. pip install openai python-dotenv
 
 import os
 import sys

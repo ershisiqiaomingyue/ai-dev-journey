@@ -19,7 +19,6 @@
 pip install openai python-dotenv
 
 # 2. 配置 API Key
-cp .env.example .env
 # 编辑 .env，填入你的 LLM_API_KEY
 
 # 3. 运行

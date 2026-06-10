@@ -1,22 +1,13 @@
 # AI Dev Journey — 从 Android 工程师到 AI Agent 开发者
 
-> 9 个月的转型路线图 · 工作日 1.5h + 周末半天 · 约 360-400 小时  
-> 路线图详见：[`tasks/AI Agent 转型全任务清单（2026.06 → 2027.02）.md`](./tasks/AI%20Agent%20转型全任务清单（2026.06%20→%202027.02）.md)
-
-## 这是什么
-
-一个**配套代码实战**的转型项目。背景：Android Framework / 中间件开发（年薪 20 万），目标：**具备独立开发 AI Agent 能力**，可以求职或接副业。
-
-不做空泛的理论，每个 phase 都有可运行的脚本、踩坑笔记、和一段"如果只能学一个东西"的总结。
-
 ## 阶段路线
 
-| 阶段 | 时间 | 主题 | 关键产物 |
-|------|------|------|---------|
-| [Phase 1](./phase1/) | 6 月（4 周） | 基础与手写 Agent | `file_agent.py` —— 能调用工具的 ReAct 循环 |
-| [Phase 2](./phase2/) | 7-8 月（6 周） | RAG 与检索 | `code_qa_agent.py` —— 回答中型代码库的结构问题 |
-| [Phase 3](./phase3/) | 9-11 月（8 周） | 框架与复杂任务 | `auto_fix_agent.py` —— 运行测试 → 读日志 → 自动修复 |
-| [Phase 4](./phase4/) | 12 月-2 月（11 周） | 成本优化 & 副业项目 | Telegram Bot + 知识库 RAG + 作品集 |
+| 阶段  | 主题 | 关键产物 |
+|------|------|---------|
+| [Phase 1](./phase1/)  | 基础与手写 Agent | `file_agent.py` —— 能调用工具的 ReAct 循环 |
+| [Phase 2](./phase2/)  | RAG 与检索 | `code_qa_agent.py` —— 回答中型代码库的结构问题 |
+| [Phase 3](./phase3/)  | 框架与复杂任务 | `auto_fix_agent.py` —— 运行测试 → 读日志 → 自动修复 |
+| [Phase 4](./phase4/)  | 成本优化 & 副业项目 | Telegram Bot + 知识库 RAG + 作品集 |
 
 ## 快速上手
 
@@ -27,7 +18,6 @@ cd ai-dev-journey
 pip install -e ".[phase2,phase3,phase4]"
 
 # 2. 配置 API Key
-cp .env.example .env
 # 编辑 .env，填入 LLM_API_KEY 和 LLM_BASE_URL
 # 推荐：DeepSeek / 阿里云百炼（OpenAI 兼容协议，免费额度够用）
 
