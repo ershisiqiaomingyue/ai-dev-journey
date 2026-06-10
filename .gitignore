@@ -24,6 +24,10 @@ env/
 # Vector DB data (Phase 2)
 phase2/data/
 
+# Phase 1 运行时数据
+phase1/history/
+phase1/workspace/
+
 # OS
 .DS_Store
 Thumbs.db

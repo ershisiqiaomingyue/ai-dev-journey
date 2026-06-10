@@ -1,5 +1,5 @@
 [project]
-name = "ai-agent-lab"
+name = "ai-dev-journey"
 version = "0.1.0"
 description = "AI Agent 学习项目 - 从基础到生产环境"
 requires-python = ">=3.10"
