@@ -7,28 +7,12 @@
 #   - 与 03_function_call.py 的区别：这里是全自动循环，不需要每步确认
 #   - 终止条件：模型不再请求工具调用时，说明它认为任务完成
 
-import os
-import sys
 import json
-from pathlib import Path
+from utils.AiClient import AiClient
 
-from dotenv import load_dotenv
-from openai import OpenAI
-
-# --- 加载配置 ---
-env_path = Path(__file__).resolve().parent.parent / ".env"
-load_dotenv(env_path)
-
-api_key = os.getenv("LLM_API_KEY")
-base_url = os.getenv("LLM_BASE_URL")
-model = os.getenv("LLM_MODEL", "deepseek-v4-flash")
-
-if not api_key or api_key == "your-api-key-here":
-    print("[错误] LLM_API_KEY 未配置，请编辑 .env 文件")
-    sys.exit(1)
-
-client = OpenAI(api_key=api_key, base_url=base_url)
-
+aiClient = AiClient()
+client = aiClient.client
+model = aiClient.model
 
 # ============================================================
 # 工具定义

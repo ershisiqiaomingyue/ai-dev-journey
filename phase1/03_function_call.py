@@ -7,20 +7,10 @@
 #   - 模型返回 tool_calls 时如何解析
 #   - 如何将工具执行结果回传给模型
 
-import os
-import sys
+
 import json
 from datetime import datetime
-from pathlib import Path
-
-from dotenv import load_dotenv
-from openai import OpenAI
-
 from utils.AiClient import AiClient
-
-# --- 加载配置 ---
-env_path = Path(__file__).resolve().parent.parent / ".env"
-load_dotenv(env_path)
 
 aiClient = AiClient()
 client = aiClient.client
