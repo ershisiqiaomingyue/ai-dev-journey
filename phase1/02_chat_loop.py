@@ -51,7 +51,7 @@ HISTORY_DIR.mkdir(exist_ok=True)
 # 对话历史的保存和加载
 # ============================================================
 
-def save_history(messages: list, filename: str = None):
+def save_history(messages: list, filename: str):
     """
     把对话历史保存到 JSON 文件
 
