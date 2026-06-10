@@ -1,0 +1,27 @@
+[project]
+name = "ai-agent-lab"
+version = "0.1.0"
+description = "AI Agent learning project - from basics to production"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40",
+    "python-dotenv>=1.0",
+]
+
+[project.optional-dependencies]
+phase2 = [
+    "chromadb",
+    "tiktoken",
+]
+phase3 = [
+    "langgraph",
+    "langchain-anthropic",
+    "langchain-core",
+]
+phase4 = [
+    "python-telegram-bot",
+]
+dev = [
+    "pytest",
+    "ruff",
+]
