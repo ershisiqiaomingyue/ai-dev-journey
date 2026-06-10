@@ -32,3 +32,7 @@ python phase1/01_hello_agent.py
 - **Token**：LLM 处理文本的基本单位（大约 1 token ≈ 0.75 个英文单词 或 0.5 个汉字）
 - **Temperature（温度）**：控制输出的随机性（0 = 确定性，1 = 更有创造性）
 - **Function Calling（函数调用）**：模型可以结构化地请求调用外部工具，而非只输出纯文本
+
+
+# 理解#
+## 1.理解openAI协议

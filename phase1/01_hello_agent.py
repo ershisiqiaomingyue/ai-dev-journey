@@ -13,7 +13,6 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 import openai
-from openai import OpenAI
 
 # --- 加载配置 ---
 # .env 在项目根目录，这个脚本在 phase1/ 下
@@ -21,8 +20,8 @@ env_path = Path(__file__).resolve().parent.parent / ".env"
 load_dotenv(env_path)
 
 api_key = os.getenv("LLM_API_KEY")
-base_url = os.getenv("LLM_BASE_URL", "https://api.anthropic.com")
-model = os.getenv("LLM_MODEL", "gpt-3.5-turbo")
+base_url = os.getenv("LLM_BASE_URL")
+model = os.getenv("LLM_MODEL")
 
 if not api_key or api_key == "your-api-key-here":
     print("[错误] LLM_API_KEY 未配置")
@@ -31,7 +30,7 @@ if not api_key or api_key == "your-api-key-here":
     sys.exit(1)
 
 # --- 创建客户端 ---
-client = OpenAI(api_key=api_key, base_url=base_url)
+client = openai.OpenAI(api_key=api_key, base_url=base_url)
 
 # --- 发送请求 ---
 try:
